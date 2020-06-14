@@ -29,5 +29,3 @@ for lat, lon,state,Confirmed,Recovered,Deaths in zip(ind_grp['Latitude'], ind_gr
 map
 
 map.save('map.html')
-
-
