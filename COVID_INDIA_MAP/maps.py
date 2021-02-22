@@ -10,13 +10,13 @@ pos=pd.read_csv('UTM ZONES of INDIA.csv')
 ind_grp=last.merge(pos , left_on='State', right_on='State / Union Territory')
 
 import folium
-map = folium.Map(location=[20.5937, 78.9629], zoom_start=5,tiles='cartodbpositron')
-tooltip="Click to See Data"
+map = folium.Map(location=[20.5937, 78.9629], zoom_start=5,tiles='Mapbox Bright')
+tooltip="Click to See latest Data"
 
 for lat, lon,state,Confirmed,Recovered,Deaths in zip(ind_grp['Latitude'], ind_grp['Longitude'],ind_grp['State'],ind_grp['Confirmed'],ind_grp['Recovered'],ind_grp['Deaths']):
     folium.CircleMarker([lat, lon],
                         radius=5,
-                        color='blue',
+                        color='red',
                       popup =(
                     'State: ' + str(state) + '<br>'
                     'Confirmed: ' + str(Confirmed) + '<br>'
